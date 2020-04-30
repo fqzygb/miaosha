@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+    <!--<classPathEntry location="/Program Files/IBM/SQLLIB/java/db2java.zip" />-->
+
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <!--数据库连接地址及密码-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/miaosha?serverTimezone=UTC"
+                        userId="root"
+                        password="root">
+        </jdbcConnection>
+
+        <!--
+        <javaTypeResolver >
+            <property name="forceBigDecimals" value="false" />
+        </javaTypeResolver>
+        -->
+
+        <!--生成DateObject类存放位置-->
+        <javaModelGenerator targetPackage="com.miaoshaproject.dataobject" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="mapping"  targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!--生成Dao类存放位置-->
+        <!--客户端代码，生成易于使用针对Model对象和XML配置文件的代码
+                type="ANNOTATEDMAPPER"  生成java model 和基于注解的MAPPER对象
+                type="MIXEDMAPPER"  生成基于注解java model 和相应的mapper对象
+                type="XMLMAPPER"  生成sqlmap xml 文佳和独立的mapper接口
+        -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.miaoshaproject.dao"  targetProject="src/main/java">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!--生成对应表及类名-->
+        <table  tableName="user_info" domainObjectName="UserDo" enableCountByExample ="false"
+                enableUpdateByExample ="false" enableDeleteByExample ="false" enableSelectByExample ="false"
+                selectByExampleQueryId ="false"></table>
+        <table  tableName="user_password" domainObjectName="UserpasswordDo"  enableCountByExample ="false"
+                enableUpdateByExample ="false" enableDeleteByExample ="false" enableSelectByExample ="false"
+                selectByExampleQueryId ="false"></table>
+
+
+    </context>
+</generatorConfiguration>

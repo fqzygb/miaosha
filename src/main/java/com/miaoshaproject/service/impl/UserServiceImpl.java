@@ -1,5 +1,7 @@
 package com.miaoshaproject.service.impl;
 
+
+
 import com.miaoshaproject.dao.UserDoMapper;
 import com.miaoshaproject.dao.UserpasswordDoMapper;
 import com.miaoshaproject.dataobject.UserDo;
@@ -7,7 +9,7 @@ import com.miaoshaproject.dataobject.UserpasswordDo;
 import com.miaoshaproject.error.BusinessException;
 import com.miaoshaproject.error.EnBusinessError;
 import com.miaoshaproject.service.UserService;
-import com.miaoshaproject.service.impl.UserModel.UserModel;
+import com.miaoshaproject.service.model.UserModel;
 import com.miaoshaproject.validator.ValidationResult;
 import com.miaoshaproject.validator.ValidatorImpl;
 import org.apache.commons.lang3.StringUtils;
@@ -17,13 +19,11 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.DuplicateFormatFlagsException;
-
 
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
-   private UserDoMapper userDoMapper;
+    private UserDoMapper userDoMapper;
     @Autowired
     private UserpasswordDoMapper userpasswordDoMapper;
     @Autowired

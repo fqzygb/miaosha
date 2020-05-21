@@ -7,11 +7,9 @@ import com.miaoshaproject.error.BusinessException;
 import com.miaoshaproject.error.EnBusinessError;
 import com.miaoshaproject.response.CommonReturnType;
 import com.miaoshaproject.service.UserService;
-import com.miaoshaproject.service.impl.UserModel.UserModel;
-import org.apache.tomcat.util.security.MD5Encoder;
+import com.miaoshaproject.service.model.UserModel;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import sun.misc.BASE64Encoder;
@@ -20,11 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Random;
 
-@Controller("user")
+@Controller("/user")
 @RequestMapping("/user")
 @CrossOrigin(allowCredentials="true",allowedHeaders="*")
 public class UserController extends baseController {

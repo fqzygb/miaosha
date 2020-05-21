@@ -126,16 +126,15 @@
               <id>mybatis generator</id>
               <phase>package</phase>
               <goals>
-                <goal>generator</goal>
+                <goal>generate</goal>
               </goals>
             </execution>
           </executions>
           <configuration>
             <!--允许移动生成的文件-->
             <verbose>true</verbose>
-
-            <!--允许移动生成的文件-->
-            <overwrite>true</overwrite>
+            <!--允许自动覆盖文件-->
+            <overwrite>false</overwrite>
             <configurationFile>
               src/main/resources/mybatis-generator.xml
             </configurationFile>

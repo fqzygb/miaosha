@@ -1,8 +1,7 @@
 package com.miaoshaproject.service;
 
 import com.miaoshaproject.error.BusinessException;
-import com.miaoshaproject.service.impl.UserModel.UserModel;
-import org.springframework.stereotype.Service;
+import com.miaoshaproject.service.model.UserModel;
 
 
 public interface UserService {
